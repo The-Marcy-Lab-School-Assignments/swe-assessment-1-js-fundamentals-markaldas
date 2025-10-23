@@ -1,6 +1,5 @@
 /*
   Write your functions here!
-
   Each function should:
   - Be exported so tests can use it
   - Follow the exact specifications
@@ -14,7 +13,19 @@
 // ============================================
 
 const petJudger = (petBreed, petName) => {
-  // Your code here
+  if (petBreed === undefined || petName === undefined) {
+    console.log(`Missing information. Please provide a valid pet.`)
+  } else if (petBreed === 'dog') {
+    console.log(`I love dogs! ${petName} is so cute!`)
+  } else if (petBreed === 'cat') {
+    console.log(`I love cats! ${petName} is so cute!`)
+  } else if (petBreed === 'turtle') {
+    console.log(`Who doesn't love a good turtle? ${petName} is the tops.`)
+  } else if (petBreed === 'snake') {
+    console.log(`Not a fan, please take ${petName} and leave.`)
+  } else if (petBreed) {
+    console.log(`What an...interesting pet.`)
+  }
 };
 
 // ============================================
@@ -22,7 +33,13 @@ const petJudger = (petBreed, petName) => {
 // ============================================
 
 const loopFromOneUpToAnother = (firstNum, secondNum) => {
-  // Your code here
+  if (firstNum !== secondNum) {
+    for (let i = firstNum; i < secondNum; i++) {
+      console.log(i)
+    }
+  } else {
+    return
+  }
 };
 
 // ============================================
@@ -30,7 +47,11 @@ const loopFromOneUpToAnother = (firstNum, secondNum) => {
 // ============================================
 
 const shoutEveryLetterForLoop = (str) => {
-  // Your code here
+
+  for (let i = 0; i < str.length; i++) {
+
+    console.log(`${str.toUpperCase()[i]}!`)
+  }
 };
 
 // ============================================
@@ -38,15 +59,32 @@ const shoutEveryLetterForLoop = (str) => {
 // ============================================
 
 const letterCaseCounts = (str) => {
-  // Your code here
-};
+  const objOfLetters = {
+    lowercase: 0,
+    uppercase: 0,
+    neither: 0
+  };
+  for (let i = 0; i < str.length; i++) {
+    const letter = str[i];
+    if (/[^a-zA-Z]/.test(letter)) {
+      objOfLetters.neither += 1
+    }
+    else if (letter === letter.toLowerCase()) {
+      objOfLetters.lowercase += 1
+    }
+    else if (letter === letter.toUpperCase()) {
+      objOfLetters.uppercase += 1
+    }
+  }
+  return objOfLetters;
+}
 
 // ============================================
 // Question 5: getNamesOfGreedyGnomes
 // ============================================
 
 const getNamesOfGreedyGnomes = (gnomes) => {
-  // Your code here
+
 };
 
 // ============================================
