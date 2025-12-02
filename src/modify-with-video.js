@@ -31,8 +31,8 @@ const players = [
 ];
 
 const increaseScore = (name) => {
-  for (let i = 0; i <= players.length; i++) {
-    if (players[i].name = name) {
+  for (let i = 0; i < players.length; i++) {
+    if (players[i].name === name) {
       players[i].score += 1;
     }
   }
@@ -54,7 +54,7 @@ const resetAllScores = () => {
 }
 
 const resetSingleScore = (player) => {
-  score = 0;
+  player.score = 0;
 }
 
 const getTopScorer = () => {
