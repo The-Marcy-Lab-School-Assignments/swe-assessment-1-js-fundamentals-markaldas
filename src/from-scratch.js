@@ -84,6 +84,15 @@ const letterCaseCounts = (str) => {
 // ============================================
 
 const getNamesOfGreedyGnomes = (gnomes) => {
+  const greedy = [];
+
+  for (const gnome of gnomes) {
+    if (gnome.stolenDecorations.length > 1) {
+      greedy.push(gnome.name);
+    }
+  }
+
+  return greedy;
 
 };
 
